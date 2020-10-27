@@ -1,0 +1,24 @@
+*.pyc
+__pycache__/
+
+#folders
+env/
+.env/ 
+.env
+.venv/
+
+
+.vscode/
+
+instance/
+
+.pytest_cache/
+.coverage
+htmlcov/
+
+dist/
+build/
+*.egg-info/
+
+#file for database
+.database.ini
