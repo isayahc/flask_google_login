@@ -1,15 +1,8 @@
-from flaskr import create_app, db
-
-app = create_app(
-
-)
+from flask import current_app as app
+from . import db
 
 
 @app.route('/hello')
 def hello():
     return "Hello, gangster man!"
 
-# @app.route('/africa')
-# def hello():
-    
-#     return "Hello, gangster man!"
