@@ -28,3 +28,6 @@ build/
 .database.ini
 *.db
 *.js
+*Db.*
+/*Db.*
+/*DB.*
