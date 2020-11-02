@@ -30,3 +30,4 @@ class TestConfig(Config):
 
     # Database
     SQLALCHEMY_DATABASE_URI = environ.get("TEST_SQLALCHEMY_DATABASE_URI")
+
