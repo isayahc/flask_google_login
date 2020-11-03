@@ -2,9 +2,9 @@ from os import environ
 import json
 
 from flask import current_app as app
-from flask import Flask, redirect, request, url_for
+from flask import redirect, request, url_for
 
-from . import db, login_manager
+from . import db
 from .model import User
 
 from flask_login import (
@@ -89,7 +89,7 @@ def callback():
     userinfo_response = requests.get(uri, headers=headers, data=body)
 
     if userinfo_response.json().get("email_verified"):
-        unique_id = userinfo_response.json()["sub"]
+        unique_id = userinfo_response.json()["sub"]  # unused
         users_email = userinfo_response.json()["email"]
         picture = userinfo_response.json()["picture"]
         users_name = userinfo_response.json()["given_name"]

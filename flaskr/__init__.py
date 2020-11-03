@@ -1,5 +1,4 @@
 # 3rd party libraries
-import json
 
 # Flask specific library
 from flask import Flask
@@ -27,8 +26,7 @@ def create_app():
     login_manager.login_message = "NICE!"
 
     with app.app_context():
-        from . import routes
-    
+
         db.create_all()
 
         return app

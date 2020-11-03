@@ -49,7 +49,6 @@ class User(db.Model, UserMixin):
     def is_authenticated(self):
         return True
 
-
     @login_manager.user_loader
     def load_user(user_id):
         try:
