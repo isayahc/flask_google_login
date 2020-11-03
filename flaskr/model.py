@@ -8,22 +8,26 @@ class User(db.Model, UserMixin):
     __tablename__ = "users"
     id_ = db.Column(
         db.Integer,
-        primary_key=True)
+        primary_key=True
+        )
 
     name = db.Column(
         db.String(80),
-        nullable=False)
+        nullable=False
+        )
 
     email = db.Column(
         db.String(80),
         nullable=False,
-        unique=True)
+        unique=True
+        )
 
     profile_pic = db.Column(
         db.String(80),
         nullable=False,
         unique=True,
-        index=False)
+        index=False
+        )
 
     def __repr__(self):
         return "<User {}>".format(self.email)
@@ -42,6 +46,15 @@ class User(db.Model, UserMixin):
     def get_id(self):
         return (self.id_)
 
+    def is_authenticated(self):
+        return True
+
+
     @login_manager.user_loader
-    def load_user(id_):
-        return User.query.get(int(id_))
+    def load_user(user_id):
+        try:
+            return User.query.get(user_id)
+        except:
+            return None
+        
+    # @login_manager.is_auth

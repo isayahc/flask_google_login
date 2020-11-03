@@ -29,11 +29,6 @@ def hello():
     return "Hello, gangster man!"
 
 
-@login_manager.user_loader
-def load_user(email):
-    return User.get(email)
-
-
 @app.route("/")
 def index():
     if current_user.is_authenticated:
@@ -46,7 +41,7 @@ def index():
             )
         )
     else:
-        return '<a class="button" href="/login">Google Login</a>'
+        return '<a class="button" href="/login">Google Login non auth g</a>'
 
 
 def get_google_provider_cfg():
@@ -102,12 +97,13 @@ def callback():
         return "User email not available or not verified by Google.", 400
 
     existing_user = User.query.filter(
-            User.name == users_name and User.email == users_email
+            User.email == users_email
         ).first()
 
     if existing_user:
         login_user(existing_user)
-        return redirect(url_for("index"))
+        # current_user.is_authenticated = True
+        return redirect(url_for(".index"))
     else:
         new_user = User(
             name=users_name,
@@ -118,7 +114,8 @@ def callback():
         db.session.commit()
 
         login_user(new_user)
-        return redirect(url_for("index"))
+        # current_user.is_authenticated = True
+        return redirect(url_for(".index"))
 
 
 @app.route("/logout")
