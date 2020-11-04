@@ -127,6 +127,6 @@ def logout():
     return redirect(url_for("index"))
 
 
-@app.route('/none')
+@app.route('/google66a812c9d2e8e42f.html')
 def tester():
     return render_template('google66a812c9d2e8e42f.html')
