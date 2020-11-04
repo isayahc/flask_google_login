@@ -1,8 +1,9 @@
 from flaskr import create_app
-from werkzeug.middleware.proxy_fix import ProxyFix
+# from werkzeug.middleware.proxy_fix import ProxyFix
 
 app = create_app()
-app.wsgi_app = ProxyFix(app.wsgi_app)
+server = server
+# app.wsgi_app = ProxyFix(app.wsgi_app)
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=False, server)
