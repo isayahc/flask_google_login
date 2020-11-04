@@ -129,4 +129,4 @@ def logout():
 
 @app.route('/none')
 def tester():
-    return redirect(url_for('google66a812c9d2e8e42f.html'))
+    return flask.render_template('google66a812c9d2e8e42f.html')

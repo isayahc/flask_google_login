@@ -1,3 +1,4 @@
+"""App entry point."""
 from flaskr import create_app
 # from werkzeug.middleware.proxy_fix import ProxyFix
 
