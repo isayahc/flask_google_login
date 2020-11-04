@@ -24,9 +24,11 @@ GOOGLE_DISCOVERY_URL = ("https://accounts.google.com/.well-known/openid-configur
 client = WebApplicationClient(GOOGLE_CLIENT_ID)
 
 
+@login_required
 @app.route('/hello')
 def hello():
-    return "Hello, gangster man!"
+    name = current_user.name
+    return f"Hello, {name}!"
 
 
 @app.route("/")

@@ -26,6 +26,7 @@ def create_app():
     login_manager.login_message = "NICE!"
 
     with app.app_context():
+        from . import routes
 
         db.create_all()
 
