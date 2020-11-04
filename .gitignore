@@ -20,5 +20,14 @@ dist/
 build/
 *.egg-info/
 
+#env files
+# ignores all .env files
+*.env
+
 #file for database
 .database.ini
+*.db
+*.js
+*Db.*
+/*Db.*
+/*DB.*
