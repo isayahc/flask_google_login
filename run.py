@@ -2,7 +2,7 @@ from flaskr import create_app
 import gunicorn
 
 app = create_app()
+server = app.server
 
 if __name__ == '__main__':
-    server = app.server
     app.run(debug=False)
