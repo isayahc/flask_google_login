@@ -1,8 +1,8 @@
 from flaskr import create_app
-import gunicorn
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 app = create_app()
-server = app.server
+app.wsgi_app = ProxyFix(app.wsgi_app)
 
 if __name__ == '__main__':
     app.run(debug=False)
