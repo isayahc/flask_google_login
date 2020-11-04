@@ -2,7 +2,7 @@ from os import environ
 import json
 
 from flask import current_app as app
-from flask import redirect, request, url_for
+from flask import redirect, request, url_for, render_template
 
 from . import db
 from .model import User
@@ -129,4 +129,4 @@ def logout():
 
 @app.route('/none')
 def tester():
-    return flask.render_template('google66a812c9d2e8e42f.html')
+    return render_template('google66a812c9d2e8e42f.html')
