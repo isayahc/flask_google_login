@@ -35,6 +35,7 @@ def hello():
 def index():
     if current_user.is_authenticated:
         return (
+            '<meta name="google-site-verification" content="P_wpVI14UDAjBIpaHBUyae1MXMvjsH8QKKsziBICVGE" />'
             "<p>Hello, {}! You're logged in! Email: {}</p>"
             "<div><p>Google Profile Picture:</p>"
             '<img src="{}" alt="Google profile pic"></img></div>'
