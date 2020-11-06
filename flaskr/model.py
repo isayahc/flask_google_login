@@ -55,5 +55,3 @@ class User(db.Model, UserMixin):
             return User.query.get(user_id)
         except:
             return None
-        
-    # @login_manager.is_auth
