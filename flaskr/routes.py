@@ -33,18 +33,7 @@ def hello():
 
 @app.route("/")
 def index():
-    if current_user.is_authenticated:
-        return render_template('home.jinja', title='home')
-    #         '<meta name="google-site-verification" content="P_wpVI14UDAjBIpaHBUyae1MXMvjsH8QKKsziBICVGE" />'
-    #         "<p>Hello, {}! You're logged in! Email: {}</p>"
-    #         "<div><p>Google Profile Picture:</p>"
-    #         '<img src="{}" alt="Google profile pic"></img></div>'
-    #         '<a class="button" href="/logout">Logout</a>'.format(
-    #             current_user.name, current_user.email, current_user.profile_pic
-    #         )
-    #     )
-    # else:
-    #     return '<a class="button" href="/login">Google Login non auth g</a>'
+    return render_template('home.jinja', title='home')
 
 
 def get_google_provider_cfg():
