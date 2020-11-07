@@ -23,7 +23,7 @@ class User(db.Model, UserMixin):
         )
 
     profile_pic = db.Column(
-        db.String(80),
+        db.String(180),
         nullable=False,
         unique=True,
         index=False
